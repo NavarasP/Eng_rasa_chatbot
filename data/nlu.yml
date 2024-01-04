@@ -1,0 +1,15 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - Hi
+      - Hello
+      - Hey
+
+  - intent: provide_paragraph
+    examples: |
+      - Here is a paragraph about [nature](topic):
+        The environment plays a crucial role in our lives. It provides us with essential resources and supports diverse ecosystems.
+      - Write a paragraph about [technology](topic).
+      - I want to talk about [science](topic).
