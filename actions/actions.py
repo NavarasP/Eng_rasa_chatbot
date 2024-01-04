@@ -16,5 +16,6 @@ class ActionProcessParagraph(Action):
 
         # Respond with a confirmation message
         dispatcher.utter_message(text="Thank you for providing the paragraph. I will process it for errors.")
+        dispatcher.utter_message(text=paragraph)
 
         return []
