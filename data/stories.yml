@@ -1,0 +1,19 @@
+version: "3.1"
+
+stories:
+
+- story: Greet and Correct Grammar
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+  - intent: provide_paragraph
+    entities:
+    - topic: "environment"
+  - action: action_process_paragraph
+
+
+
+
+
+
