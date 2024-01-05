@@ -6,7 +6,6 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-
   - intent: provide_paragraph
     entities:
     - topic: "environment"
