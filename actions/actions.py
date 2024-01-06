@@ -12,17 +12,9 @@ class ActionProcessParagraph(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
         # Extract the provided paragraph and topic from the user's message
-        paragraph = tracker.latest_message['text']
-        topic = tracker.get_slot('topic')
-
-        text = "gec: " + paragraph
-        
+        # topic = tracker.get_slot('topic')
+        text = "gec: " + tracker.latest_message['text']
         result = happy_tt.generate_text(text, args=ttsettings)
-
-        # print(result.text)
-        # Process the paragraph (You can use your grammar checking logic here)
-        # For simplicity, let's just print the paragraph and topic for now
-
         # Respond with a confirmation message
         dispatcher.utter_message(text="Thank you for providing the paragraph. I will process it for errors.")
         dispatcher.utter_message(text=result.text)
