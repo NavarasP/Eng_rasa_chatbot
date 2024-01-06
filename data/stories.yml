@@ -2,13 +2,23 @@ version: "3.1"
 
 stories:
 
-- story: Greet and Correct Grammar
+# - story: Greet and Correct Grammar
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: provide_paragraph
+#     entities:
+#     - topic: "environment"
+
+#   - action: action_process_paragraph
+
+- story: Greet and Process Paragraph
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: provide_paragraph
-    entities:
-    - topic: "environment"
+
+  - user: |
+      The environment plays a crucial role in our lives. It provides us with essential resources and supports diverse ecosystems.
   - action: action_process_paragraph
 
 
