@@ -7,8 +7,8 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: provide_paragraph
-    entities:
-    - topic: "environment"
+    # entities:
+    # - topic: "environment"
   - action: action_process_paragraph
 
 
