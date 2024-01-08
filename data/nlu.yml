@@ -7,6 +7,13 @@ nlu:
       - Hello
       - Hey
 
+  - intent: 
+
+  # - intent: rewrite_sentence
+  #   examples: |
+  #     - Can you please rewrite?
+  #     - Can you correct this sentence?
+
   - intent: provide_paragraph
     examples: |
       - Here is a paragraph about [nature](topic):

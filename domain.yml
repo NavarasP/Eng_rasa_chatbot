@@ -8,17 +8,17 @@ entities:
 
 responses:
   utter_greet:
-    - text: "Hello! Please write a paragraph about the given topic."
+    - text: Hey I'm Enji.Your English Learning Chatbot Assistant. May i know your name?
+
+  utter_default:
+    - text: Sorry, I didn't understand that. Can you please rephrase or provide more information?
 
 actions:
   - action_process_paragraph
 
 
 
-
-
-
-
 session_config:
-  session_expiration_time: 60
+  # sessi
+  xpiration_time: 60
   carry_over_slots_to_new_session: true
