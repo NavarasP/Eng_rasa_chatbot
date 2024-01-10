@@ -1,22 +1,3 @@
 version: "3.1"
 
-rules:
-  - rule: Respond to Thanks
-    steps:
-    - intent: thanks
-    - action: utter_thanks
 
-  - rule: Respond to Greet
-    steps:
-    - intent: greet
-    - action: utter_greet
-
-  - rule: Respond to Bye
-    steps:
-    - intent: bye
-    - action: utter_bye
-
-  - rule: Print Default Message
-    steps:
-      - intent: nlu_fallback
-      - action: utter_default

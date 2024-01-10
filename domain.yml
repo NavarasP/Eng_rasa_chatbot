@@ -8,54 +8,18 @@ intents:
 
 responses:
   utter_greet:
-    - text: Hello! I'm Enji, your English Learning Assistant! How can I help you today?
-    - text: Hi there! Enji here, your English Learning Assistant. What can I assist you with?
-    - text: Greetings! Enji at your service, ready to help you with English. What do you need assistance with?
-    - text: Welcome! Enji, your English Learning Assistant, is here to help. How can I assist you?
-    - text: Hey! Enji here. I'm your English Learning Assistant. Let me know how I can support you.
-
-  utter_ask_para:
-    - text: "Hey there! Got a paragraph brewing in your mind? Share it with me"
-    - text: "Ready for a fun writing exercise? Share your paragraph !"
-    - text: "Feeling creative? I'd love to read a paragraph from you!"
-    - text: "Got a story to tell or an idea to express? Type out your paragraph!"
-
-  utter_thanks:
-    - text: You're welcome! If you have any more questions or need assistance, feel free to ask.
-    - text: Glad I could help! Don't hesitate to reach out if you need anything else.
-    - text: Anytime! If there's anything else I can do for you, just let me know.
-    - text: It was my pleasure! Let me know if there's anything else you'd like assistance with.
-    - text: No problem! If you have further questions, feel free to ask.
-
-  utter_bye:
-    - text: "Goodbye! If you ever need assistance, feel free to come back."
-    - text: "Bye for now! If you have more questions in the future, don't hesitate to ask."
-    - text: "Farewell! It was great chatting with you. Reach out if you need anything else."
-    - text: "See you later! If there's anything else I can help with, let me know."
-    - text: "Take care and goodbye! If you ever want to talk, I'll be here."
-    - text: "Adios! Feel free to return whenever you have more questions or just want to chat."
-    - text: "Until next time! If there's anything on your mind, drop by and let me know."
-    - text: "So long! If you need assistance in the future, don't hesitate to reach out."
-    - text: "Goodbye and take care! If you ever need help, you know where to find me."
-    - text: "See you around! If there's anything else you'd like to discuss, I'm here."
-  
-  utter_default:
-    - text: "I'm sorry, I didn't quite catch that. Could you please rephrase or ask another question?"
-    - text: "I'm still learning! Can you try saying that in a different way or ask me something else?"
-    - text: "Oops! I didn't get that. Could you provide more details or try a different question?"
-    - text: "I'm not sure I understand. Feel free to rephrase your question or ask me something else."
-    - text: "Hmm, I didn't catch that. Could you try expressing it differently or ask another question?"
-    - text: "Sorry, I'm still learning and might not fully understand. Can you rephrase or ask a different question?"
-    - text: "My apologies, I'm not sure I follow. Please try rephrasing or asking something else."
-    - text: "I didn't quite get that. Could you provide more context or try a different way of asking?"
-    - text: "Hmm, it seems like I didn't understand. Can you try saying it in a different way or ask another question?"
-    - text: "Sorry, I didn't catch that. Feel free to provide more details or ask me something else!"
-
-
+    - text: "Hello! Please write a paragraph about the given topic."
 
 actions:
   - action_process_paragraph
 
+
+
+
+
+
+
 session_config:
-  session_expiration_time: 60
+  # sessi
+  xpiration_time: 60
   carry_over_slots_to_new_session: true
