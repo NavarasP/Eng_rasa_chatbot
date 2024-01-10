@@ -10,11 +10,8 @@
               (e.onload = () => {
                 window.WebChat.default(
                   {
-                    initPayload: '/greet',
                     customData: { language: "en" },
-                    socketUrl: "http://localhost:5005",
-                    title: 'MSE',
-                    subtitle: 'ChatBots'
+                    socketUrl: "http://127.0.0.1:5005",
                     // add other props here
                   },
                   null
@@ -22,7 +19,6 @@
               }),
               t.insertBefore(e, t.firstChild);
           })();
-          localStorage.clear();
           </script>
     </body>
 </html>
