@@ -11,12 +11,17 @@ class ActionProcessParagraph(Action):
         return "action_process_paragraph"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
-        # Extract the provided paragraph and topic from the user's message
-        # topic = tracker.get_slot('topic')
-        text = "gec: " + tracker.latest_message['text']
-        result = happy_tt.generate_text(text, args=ttsettings)
+
+        message= tracker.latest_message['text'] 
+
+        while True:
+            result = happy_tt.generate_text("gec: " +message, args=ttsettings).text
+            if result == message:
+                break
+            message = result
+
         # Respond with a confirmation message
         dispatcher.utter_message(text="Thank you for providing the paragraph. I will process it for errors.")
-        dispatcher.utter_message(text=result.text)
+        dispatcher.utter_message(text=result)
 
         return []
