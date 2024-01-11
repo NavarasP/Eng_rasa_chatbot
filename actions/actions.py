@@ -11,9 +11,8 @@ class ActionProcessParagraph(Action):
         return "action_process_paragraph"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
-
-        message= tracker.latest_message['text'] 
-
+        # Extract the provided paragraph and topic from the user's message
+        message = tracker.latest_message['text']
         while True:
             result = happy_tt.generate_text("gec: " +message, args=ttsettings).text
             if result == message:
@@ -21,9 +20,8 @@ class ActionProcessParagraph(Action):
             message = result
 
         # Respond with a confirmation message
-        dispatcher.utter_message(text="Thank you for providing the paragraph. I will process it for errors.")
+     
         dispatcher.utter_message(text=result)
+        dispatcher.utter_message(text="Here is you error free sentence :)")
+
         return []
-    
-
-

@@ -1,96 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Chat Interface</title>
-  <!-- Link to the external CSS file -->
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Chat Interface</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="chat-container">
+      <div id="chat-messages"></div>
 
-  <div id="chat-container">
-    <div id="chat-messages"></div>
-
-    <div id="input-container">
-      <input type="text" id="user-input" placeholder="Type your message...">
-      <button id="send-button" onclick="sendMessage()">Send</button>
+      <div id="input-container">
+        <input type="text" id="user-input" placeholder="Type your message..." />
+        <button id="send-button" onclick="sendMessage()">Send</button>
+      </div>
     </div>
-  </div>
 
-  <script>
-    async function sendMessage() {
-      // Get user input
-      var userInput = document.getElementById("user-input").value;
+    <script>
+      async function sendMessage() {
+        // Get user input
+        var userInput = document.getElementById("user-input").value;
 
-      // Check if the user input is not empty
-      if (userInput.trim() !== "") {
-        // Create the message object
-        var messageObject = {
-          sender: "user",
-          message: userInput
-        };
+        // Check if the user input is not empty
+        if (userInput.trim() !== "") {
+          // Create the message object
+          var messageObject = {
+            sender: "user",
+            message: userInput,
+          };
 
-        try {
-          // Send the message to the webhook using Fetch API
-          const response = await fetch('http://localhost:5005/webhooks/rest/webhook', {
-            method: 'POST',
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json',
-              'charset': 'UTF-8',
-            },
-            body: JSON.stringify(messageObject),
-          });
+          try {
+            // Send the message to the webhook using Fetch API
+            const response = await fetch(
+              "http://localhost:5005/webhooks/rest/webhook",
+              {
+                method: "POST",
+                headers: {
+                  Accept: "application/json",
+                  "Content-Type": "application/json",
+                  charset: "UTF-8",
+                },
+                body: JSON.stringify(messageObject),
+              }
+            );
 
-          // Check if the request was successful (status code 2xx)
-          if (response.ok) {
-            // Parse and process the bot's reply
-            const botReply = await response.json();
+            // Check if the request was successful (status code 2xx)
+            if (response.ok) {
+              // Parse and process the bot's reply
+              const botReply = await response.json();
 
-            // Display user message
-            displayUserMessage(userInput);
+              // Display user message
+              displayUserMessage(userInput);
 
-            // Display bot message
-            displayBotMessage(botReply[0].text); // Assuming the bot's reply is in the 'text' property
+              // Display bot message
+              displayBotMessage(botReply[0].text); // Assuming the bot's reply is in the 'text' property
 
-            // Clear user input
-            document.getElementById("user-input").value = "";
+              // Clear user input
+              document.getElementById("user-input").value = "";
 
-            // Scroll to the bottom of the chat
-            var chatMessages = document.getElementById("chat-messages");
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-          } else {
-            // Handle the error response
-            console.error("Failed to send message. Server returned status:", response.status);
+              // Scroll to the bottom of the chat
+              var chatMessages = document.getElementById("chat-messages");
+              chatMessages.scrollTop = chatMessages.scrollHeight;
+            } else {
+              // Handle the error response
+              console.error(
+                "Failed to send message. Server returned status:",
+                response.status
+              );
+            }
+          } catch (error) {
+            // Handle fetch error
+            console.error("Error during fetch:", error);
           }
-        } catch (error) {
-          // Handle fetch error
-          console.error("Error during fetch:", error);
         }
       }
-    }
 
-    function displayBotMessage(message) {
-      // Display bot message in the chat interface
-      var chatMessages = document.getElementById("chat-messages");
-      var botMessage = document.createElement("div");
-      botMessage.className = "message bot-message";
-      botMessage.textContent = message;
-      chatMessages.appendChild(botMessage);
-      chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to the bottom of the chat
-    }
+      function displayBotMessage(message) {
+        // Display bot message in the chat interface
+        var chatMessages = document.getElementById("chat-messages");
+        var botMessage = document.createElement("div");
+        botMessage.className = "message bot-message";
+        botMessage.textContent = message;
+        chatMessages.appendChild(botMessage);
+        chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to the bottom of the chat
+      }
 
-    function displayUserMessage(message) {
-      // Display user message in the chat interface
-      var chatMessages = document.getElementById("chat-messages");
-      var userMessage = document.createElement("div");
-      userMessage.className = "message user-message";
-      userMessage.textContent = message;
-      chatMessages.appendChild(userMessage);
-      chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to the bottom of the chat
-    }
-  </script>
-
-</body>
+      function displayUserMessage(message) {
+        // Display user message in the chat interface
+        var chatMessages = document.getElementById("chat-messages");
+        var userMessage = document.createElement("div");
+        userMessage.className = "message user-message";
+        userMessage.textContent = message;
+        chatMessages.appendChild(userMessage);
+        chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to the bottom of the chat
+      }
+    </script>
+  </body>
 </html>

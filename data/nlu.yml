@@ -1,60 +1,59 @@
 version: "3.1"
 nlu:
-- intent: greet
-  examples: |
-    - Hi there
-    - Hey!
-    - Greetings
-    - Howdy
-    - Hello friend
-    - What's up
-    - Hiya
-    - Good day
-    - Yo
-    - Hi, how are you?
-    - Hello, nice to see you
+  - intent: greet
+    examples: |
+      - Hi there
+      - Hey!
+      - Greetings
+      - Howdy
+      - Hello friend
+      - What's up
+      - Hiya
+      - Good day
+      - Yo
+      - Hi, how are you?
+      - Hello, nice to see you
 
-- intent: affirm
-  examples: |
-    - Absolutely
-    - Of course
-    - Definitely
-    - Yep
-    - Certainly
-    - Sure thing
-    - You bet
-    - Indeed
-    - OK
-    - Fine
-    - Alright
+  - intent: affirm
+    examples: |
+      - Absolutely
+      - Of course
+      - Definitely
+      - Yep
+      - Certainly
+      - Sure thing
+      - You bet
+      - Indeed
+      - OK
+      - Fine
+      - Alright
 
-- intent: correct_mistake
-  examples: |
-    - Correct this sentence
-    - Fix the error
-    - There's a mistake, please correct it
-    - Fix this for me
-    - I made a mistake, can you correct it?
-    - Please rectify the error
-    - I need a correction
-    - Point out and correct the mistake
-    - I spotted an error, help me correct it
-    - Rectify the error in my previous message
-    - Fix this sentence for me
-    - I messed up, can you correct it?
-    - Please rectify my error
-    - Point out the mistake and fix it
-    - There's an error, help me correct it
-    - Fix the problem in my previous message
-    - Correct the mistake, please
-    - I need a correction here
-    - Rectify the error in my text
-    - Can you fix this error?
-    - I made a mistake, help me out
+  - intent: correct_mistake
+    examples: |
+      - Correct this sentence
+      - Fix the error
+      - There's a mistake, please correct it
+      - Fix this for me
+      - I made a mistake, can you correct it?
+      - Please rectify the error
+      - I need a correction
+      - Point out and correct the mistake
+      - I spotted an error, help me correct it
+      - Rectify the error in my previous message
+      - Fix this sentence for me
+      - I messed up, can you correct it?
+      - Please rectify my error
+      - Point out the mistake and fix it
+      - There's an error, help me correct it
+      - Fix the problem in my previous message
+      - Correct the mistake, please
+      - I need a correction here
+      - Rectify the error in my text
+      - Can you fix this error?
+      - I made a mistake, help me out
 
-
-- intent: thanks
-  examples: |
+  - intent: thanks
+    examples: |
       - Thanks
       - Thank you
       - Thanks a lot
@@ -78,17 +77,16 @@ nlu:
       - Huge thanks!
       - Thanks for your support
 
-
-- intent: bye
-  examples: |
-    - Goodbye
-    - Bye
-    - Farewell
-    - See you later
-    - Adios
-    - Take care
-    - Catch you later
-    - Until next time
-    - Bye for now
-    - So long
-    - See you around
+  - intent: bye
+    examples: |
+      - Goodbye
+      - Bye
+      - Farewell
+      - See you later
+      - Adios
+      - Take care
+      - Catch you later
+      - Until next time
+      - Bye for now
+      - So long
+      - See you around

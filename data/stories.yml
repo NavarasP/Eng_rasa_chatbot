@@ -1,45 +1,14 @@
 version: "3.1"
 
 stories:
-
-- story: correct_grammar
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: correct_mistake
-  - action: utter_ask_para
-  - user: |
-      Write a paragraph
-  - action: action_process_paragraph
-  - intent: thanks
-  - action: utter_thanks
-  
-
-
-# - story: Greet, Ask for Paragraph, and Correct Grammar
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-
-#   - user: |
-#       Write a paragraph about.
-#   - action: action_process_paragraph
-#   - intent: affirm
-#   - action: utter_ask_confirmation
-
-#   - intent: affirm
-#   - action: action_process_paragraph
-#   - action: utter_thanks_for_correction
-
-
-
-
-
-
-# - story: interactive_story_1
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: affirm
-#   - action: action_process_paragraph
-#   - action: utter_thanks_for_correction
+  - story: correct_grammar
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: correct_mistake
+      - action: utter_ask_para
+      - user: |
+          Write a paragraph
+      - action: action_process_paragraph
+      - intent: thanks
+      - action: utter_thanks

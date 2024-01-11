@@ -1,4 +1,4 @@
-version: '3.1'
+version: "3.1"
 intents:
   - affirm
   - greet
@@ -37,7 +37,7 @@ responses:
     - text: "So long! If you need assistance in the future, don't hesitate to reach out."
     - text: "Goodbye and take care! If you ever need help, you know where to find me."
     - text: "See you around! If there's anything else you'd like to discuss, I'm here."
-  
+
   utter_default:
     - text: "I'm sorry, I didn't quite catch that. Could you please rephrase or ask another question?"
     - text: "I'm still learning! Can you try saying that in a different way or ask me something else?"
@@ -49,8 +49,6 @@ responses:
     - text: "I didn't quite get that. Could you provide more context or try a different way of asking?"
     - text: "Hmm, it seems like I didn't understand. Can you try saying it in a different way or ask another question?"
     - text: "Sorry, I didn't catch that. Feel free to provide more details or ask me something else!"
-
-
 
 actions:
   - action_process_paragraph
